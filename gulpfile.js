@@ -6,7 +6,6 @@ var streamify = require('gulp-streamify');
 var rename = require('gulp-rename');
 var browserSync = require('browser-sync').create();
 
-var port = process.env.PORT || 3001;
 
 
 
@@ -32,8 +31,7 @@ gulp.task('watch', function() {
 gulp.task('browser-sync', function() {
     browserSync.init({
 	server: {
-	    baseDir: './',
-	    port: port
+	    baseDir: './'
 	}
     });
 });
@@ -41,3 +39,4 @@ gulp.task('browser-sync', function() {
 
 
 gulp.task('default', ['browserify', 'watch', 'browser-sync']);
+gulp.task('build', ['browserify']);
