@@ -1,5 +1,6 @@
 {
     "title": "Blade of Light",
     "description_markdown": "While attacking a unit with __undying__, treat the unit although it doesn't have the __undying__ attribute.",
-    "category": "equipment"
+    "category": "equipment",
+    "picture": "fire_blade_of_tai.png"
 }
