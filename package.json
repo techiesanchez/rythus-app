@@ -1,0 +1,44 @@
+{
+  "name": "rythus-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/gulp/bin/gulp.js",
+    "build": "./node_modules/gulp/bin/gulp.js build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techiesanchez/rythus-app.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/techiesanchez/rythus-app/issues"
+  },
+  "homepage": "https://github.com/techiesanchez/rythus-app#readme",
+  "dependencies": {
+    "browserify": "^13.1.1",
+    "next": "^1.2.3",
+    "superagent": "^3.2.1"
+  },
+  "devDependencies": {
+    "bluebird": "^3.4.6",
+    "browser-sync": "^2.18.5",
+    "browserify": "^13.1.1",
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-csslint": "^1.0.0",
+    "gulp-image": "^2.7.2",
+    "gulp-jsoncombine": "^1.0.3",
+    "gulp-jsonlint": "^1.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^2.0.0",
+    "jquery": "^3.1.1",
+    "markdown-it": "^8.2.1",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0"
+  }
+}
