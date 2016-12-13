@@ -1,5 +1,6 @@
 {
     "title": "Nameless Man Under the Hood",
     "description_markdown": "If a hero and this figure are on the same space the owner of the hero draws a __Quest Card__",
-    "category": "partisans"
+    "category": "partisans",
+    "picture": "thehoodedone.png"
 }
