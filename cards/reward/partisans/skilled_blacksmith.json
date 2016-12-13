@@ -1,5 +1,6 @@
 {
     "title": "Skilled Blacksmith",
     "description_markdown": "The \"Skilled Blacksmith\" unit allows you to craft weapons at villages or settlements, using raw materials.",
-    "category": "partisans"
+    "category": "partisans",
+    "picture": "blacksmith.png"
 }

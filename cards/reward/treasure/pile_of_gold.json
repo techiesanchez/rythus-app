@@ -1,5 +1,6 @@
 {
     "title": "Pile of Gold",
     "description_markdown": "Collect (x) gold tokens.",
-    "category": "treasure"
+    "category": "treasure",
+    "picture": "Gold.png"
 }
