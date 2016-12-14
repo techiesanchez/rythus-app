@@ -11,8 +11,13 @@ var cardBundler = require('./lib/card-bundler');
 var csslint = require('gulp-csslint');
 var image = require('gulp-image');
 var jshint = require('gulp-jshint');
+var ghPages = require('gulp-gh-pages');
 
 
+gulp.task('deploy', function() {
+    gulp.src('./dist/**/*')
+        .pipe(ghPages());
+});
 
 gulp.task('browserify', function() {
     browserify('./lib/main.js')
