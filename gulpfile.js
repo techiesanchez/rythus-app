@@ -10,17 +10,24 @@ var jsonlint = require('gulp-jsonlint');
 var cardBundler = require('./lib/card-bundler');
 var csslint = require('gulp-csslint');
 var image = require('gulp-image');
+var jshint = require('gulp-jshint');
 
 
 
 gulp.task('browserify', function() {
-    browserify('./lib/cards_rewards.js')
+    browserify('./lib/main.js')
 	.bundle()
-	.pipe(source('cards_rewards.js'))
+	.pipe(source('main.js'))
 	.pipe(streamify(uglify()))
 	.pipe(rename('bundle.js'))
 	.pipe(gulp.dest('./dist'))
 	.pipe(browserSync.stream())
+});
+
+gulp.task('lint.scripts', function() {
+    gulp.src('./lib/**/*.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
 
 
@@ -77,6 +84,5 @@ gulp.task('styles.build', function() {
 });
 
 
-
-gulp.task('default', ['browserify', 'watch', 'watch.images', 'watch.cards', 'browser-sync']);
+gulp.task('default', ['lint.scripts', 'browserify', 'watch', 'watch.images', 'watch.cards', 'browser-sync']);
 gulp.task('build', ['browserify', 'styles.build', 'lint.cards', 'build.cards', 'build.images']);
