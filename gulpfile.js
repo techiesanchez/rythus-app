@@ -15,7 +15,7 @@ var ghPages = require('gulp-gh-pages');
 
 
 gulp.task('deploy', function() {
-    gulp.src('./dist/**/*')
+    return gulp.src('./dist/**/*')
         .pipe(ghPages());
 });
 
