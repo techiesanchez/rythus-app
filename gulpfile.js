@@ -20,7 +20,7 @@ gulp.task('deploy', function() {
 });
 
 gulp.task('browserify', function() {
-    browserify('./lib/main.js')
+    browserify('./lib/main.js', {debug: true})
 	.bundle()
 	.pipe(source('main.js'))
 	.pipe(streamify(uglify()))
