@@ -78,7 +78,7 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('styles.build', function() {
+gulp.task('build.styles', function() {
     gulp.src('./*.css')
 	.pipe(csslint({
 	    'ids': false
@@ -89,5 +89,10 @@ gulp.task('styles.build', function() {
 });
 
 
+gulp.task('build.domain', function() {
+    gulp.src('./CNAME')
+        .pipe(gulp.dest('./dist'))
+});
+
 gulp.task('default', ['lint.scripts', 'browserify', 'watch', 'watch.images', 'watch.cards', 'browser-sync']);
-gulp.task('build', ['browserify', 'styles.build', 'lint.cards', 'build.cards', 'build.images']);
+gulp.task('build', ['browserify', 'build.styles', 'lint.cards', 'build.cards', 'build.images', 'build.domain']);
