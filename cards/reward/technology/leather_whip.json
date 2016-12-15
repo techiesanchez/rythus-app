@@ -1,5 +1,6 @@
 {
     "title": "Leather Whip",
     "description_markdown": "Merchants gain one (1) additional move speed.",
-    "category": "technology"
+    "category": "technology",
+    "picture": "whip.png"
 }

@@ -1,5 +1,6 @@
 {
     "title": "Discovery of Steel",
     "description_markdown": "At the start of the __DAY__ choose one: 1. [Re-roll one (1) attack die] 2. [Re-roll two (2) defense dice.]",
-    "category": "technology"
+    "category": "technology",
+    "picture": "steel_armor.png"
 }
