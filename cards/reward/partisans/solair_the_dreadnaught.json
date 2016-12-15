@@ -1,5 +1,6 @@
 {
     "title": "Sol'air: The Dreadnaught",
     "description_markdown": "Gain control of \"Sol'air: The Dreadnaught\"",
-    "category": "partisans"    
+    "category": "partisans",
+    "picture": "spaceArmorDark.png"
 }
