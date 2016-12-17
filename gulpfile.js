@@ -8,10 +8,13 @@ var browserSync = require('browser-sync').create();
 var jsoncombine = require('gulp-jsoncombine');
 var jsonlint = require('gulp-jsonlint');
 var cardBundler = require('./lib/card-bundler');
-var csslint = require('gulp-csslint');
 var image = require('gulp-image');
 var jshint = require('gulp-jshint');
 var ghPages = require('gulp-gh-pages');
+var babel = require('gulp-babel');
+var eslint = require('gulp-eslint');
+var csslint = require('gulp-csslint');
+var concatCss = require('gulp-concat-css');
 
 
 gulp.task('deploy', function() {
@@ -19,20 +22,34 @@ gulp.task('deploy', function() {
         .pipe(ghPages());
 });
 
-gulp.task('browserify', function() {
+gulp.task('build.scripts', function() {
     browserify('./lib/main.js', {debug: true})
+        .transform("babelify", {presets: ["es2015", "react"]})
 	.bundle()
 	.pipe(source('main.js'))
-	.pipe(streamify(uglify()))
+	//.pipe(streamify(uglify())) // see https://stackoverflow.com/a/28088306/1004931 when u want to add minifi+sourcemaps
 	.pipe(rename('bundle.js'))
 	.pipe(gulp.dest('./dist'))
 	.pipe(browserSync.stream())
 });
 
 gulp.task('lint.scripts', function() {
-    gulp.src('./lib/**/*.js')
+    return gulp.src('./lib/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
+});
+
+gulp.task('lint.styles', function() {
+    return gulp.src('styles/**/*.css')
+               .pipe(csslint({ 'ids': false }))
+               .pipe(csslint.formatter())
+});
+
+gulp.task('lint.components', function() {
+    return gulp.src('./components/**/*.js')
+               .pipe(eslint())
+               .pipe(eslint.format())
+               .pipe(eslint.failAfterError());
 });
 
 
@@ -64,9 +81,12 @@ gulp.task('watch.cards', function() {
 });
 
 
-gulp.task('watch', function() {
-    gulp.watch('lib/**/*.js', ['browserify']);
-    gulp.watch('./*.css', ['styles.build']);
+gulp.task('watch.scripts', function() {
+    gulp.watch(['lib/**/*.js','components/**/*.js'], ['build.scripts']);
+})
+
+gulp.task('watch.styles', function() {
+    gulp.watch('./styles/**/*.css', ['build.styles']);
 });
 
 
@@ -79,13 +99,10 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('build.styles', function() {
-    gulp.src('./*.css')
-	.pipe(csslint({
-	    'ids': false
-	}))
-	.pipe(csslint.formatter())
-	.pipe(gulp.dest('./dist'))
-	.pipe(browserSync.stream())
+    return gulp.src('./styles/**/*.css')
+               .pipe(concatCss('bundle.css'))               
+               .pipe(gulp.dest('./dist'))
+	       .pipe(browserSync.stream())
 });
 
 
@@ -94,5 +111,22 @@ gulp.task('build.domain', function() {
         .pipe(gulp.dest('./dist'))
 });
 
-gulp.task('default', ['lint.scripts', 'browserify', 'watch', 'watch.images', 'watch.cards', 'browser-sync']);
-gulp.task('build', ['browserify', 'build.styles', 'lint.cards', 'build.cards', 'build.images', 'build.domain']);
+gulp.task('default', [
+    'lint.scripts',
+    'lint.components', 
+    'build.scripts', 
+    'watch.styles',
+    'watch.images',
+    'watch.cards',
+    'watch.scripts',
+    'browser-sync'
+]);
+
+gulp.task('build', [
+    'build.scripts',
+    'build.styles',
+    'lint.cards',
+    'build.cards', 
+    'build.images', 
+    'build.domain'
+]);
