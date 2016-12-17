@@ -1,0 +1,163 @@
+@import '../node_modules/mobi.css/dist/mobi.css';
+
+#mapid { height: 180px; }
+
+
+body { 
+    background-color: grey;
+}
+
+
+.button {
+  background: #b7b8a0;
+  background-image: -webkit-linear-gradient(top, #b7b8a0, #3d3c20);
+  background-image: -moz-linear-gradient(top, #b7b8a0, #3d3c20);
+  background-image: -ms-linear-gradient(top, #b7b8a0, #3d3c20);
+  background-image: -o-linear-gradient(top, #b7b8a0, #3d3c20);
+  background-image: linear-gradient(to bottom, #b7b8a0, #3d3c20);
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Courier New;
+  color: #000000;
+  font-size: 16px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: #6b2230;
+  background-image: -webkit-linear-gradient(top, #6b2230, #9c6d75);
+  background-image: -moz-linear-gradient(top, #6b2230, #9c6d75);
+  background-image: -ms-linear-gradient(top, #6b2230, #9c6d75);
+  background-image: -o-linear-gradient(top, #6b2230, #9c6d75);
+  background-image: linear-gradient(to bottom, #6b2230, #9c6d75);
+  text-decoration: none;
+}
+
+
+.controls {
+    border: 3px dashed black;
+}
+
+
+.smallcard {
+    background-color: antiquewhite;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    display: block;
+    float: left;
+    height: 140px;
+    margin: 0 7px 7px 0;
+    padding: 2px;
+    position: relative;
+    width: 100px;
+}
+
+.smallcard .title {
+    font-size: 6px;
+    line-height: 1;
+    margin-left: 2px;
+    margin-top: 2px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.smallcard .picture {
+    height: 75px;
+    left: 10px;
+    position: absolute;
+    top: 15px;
+    width: 75px;
+}
+
+.smallcard .picture img {
+    height: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+
+.smallcard .description {
+    background-color: antiquewhite;
+    font-size: 6px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0;
+    overflow-y: auto;
+    position: absolute;
+    top: 90px;
+    width: 90px;
+    z-index: 5;
+}
+
+
+
+
+
+
+
+
+
+
+.card {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    display: block;
+    float: left;
+    height: 280px;
+    margin: 0 15px 15px 0;
+    padding: 3px;
+    position: relative;
+    width: 200px;
+}
+
+.card .title {
+    font-size: 14px;
+    line-height: 1;
+    margin-left: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.card .background {
+    background-color: yellow;
+}
+
+.card .picture {
+    height: 150px;
+    left: 20px;
+    position: absolute;
+    top: 30px;
+    width: 150px;
+}
+
+.card .picture img {
+    height: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+}
+
+.card-title {
+    background-color: brown;
+}
+
+.card .description {
+    background-color: antiquewhite;
+    font-size: 12px;
+    height: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0;
+    overflow-y: auto;
+    position: absolute;
+    top: 180px;
+    width: 180px;
+    z-index: 5;
+}
+
