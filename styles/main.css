@@ -35,6 +35,9 @@ body {
   text-decoration: none;
 }
 
+.active {
+    border: 3px solid red;
+}
 
 .controls {
     border: 3px dashed black;
