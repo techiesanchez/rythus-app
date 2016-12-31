@@ -1,15 +1,12 @@
 import { connect } from 'react-redux';
 import { clickMenuItem } from '../actions';
-import Menu from '../components/menu';
+import Menu from '../components/Menu';
 
 
 const mapStateToProps = (state) => {
-    console.log('container got state--');
-    console.log(state);
     return {
-        menuItems: state.menu.menuItems,
-        selectedItem: state.menu.selectedItem
-        //onMenuItemClick: state.onMenuItemClick
+        menuItems: state.menuItems,
+        selectedItem: state.selectedItem
     }
 }
 

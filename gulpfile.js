@@ -111,6 +111,8 @@ gulp.task('build.domain', function() {
 
 gulp.task('default', [
     'lint.scripts',
+    'lint.styles',
+    'build.styles',
     'build.scripts', 
     'watch.styles',
     'watch.images',
