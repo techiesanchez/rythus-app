@@ -800,9 +800,11 @@ body {
   text-decoration: none;
 }
 
-.controls {
-  border: 3px dashed black;
+.active {
+  font-weight: bold;
 }
+
+
 
 .smallcard {
   background-color: antiquewhite;
@@ -823,20 +825,23 @@ body {
   margin-left: 2px;
   margin-top: 2px;
   overflow: hidden;
-  position: absolute;
+  position: relative;
+  /** was absolute */
 }
 
 .smallcard .picture {
   height: 75px;
   left: 10px;
-  position: absolute;
+  position: relative;
+  /** abs */
   top: 15px;
   width: 75px;
 }
 
 .smallcard .picture img {
   height: auto;
-  position: absolute;
+  position: relative;
+  /** abs*/
   width: 100%;
   z-index: 0;
 }
@@ -849,8 +854,8 @@ body {
   margin-right: 5px;
   margin-top: 0;
   overflow-y: auto;
-  position: absolute;
-  top: 90px;
+  position: relative;
+  /** abs */
   width: 90px;
   z-index: 5;
 }
@@ -874,7 +879,8 @@ body {
   margin-left: 5px;
   margin-top: 5px;
   overflow: hidden;
-  position: absolute;
+  position: relative;
+  /** abs */
 }
 
 .card .background {
@@ -884,14 +890,16 @@ body {
 .card .picture {
   height: 150px;
   left: 20px;
-  position: absolute;
+  position: relative;
+  /** abs */
   top: 30px;
   width: 150px;
 }
 
 .card .picture img {
   height: auto;
-  position: absolute;
+  position: relative;
+  /** abs */
   width: 100%;
   z-index: 0;
 }
@@ -908,8 +916,8 @@ body {
   margin-right: 10px;
   margin-top: 0;
   overflow-y: auto;
-  position: absolute;
-  top: 180px;
+  position: relative;
+  /** abs */
   width: 180px;
   z-index: 5;
 }

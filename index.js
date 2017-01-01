@@ -17,6 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 
 var initialState = {
+    displayedCard: {},
     selectedItem: "Encounter",
     menuItems: [
         { name: 'resourcez', active: false },
